@@ -94,8 +94,6 @@ public class Login extends HttpServlet {
 						request.getRequestDispatcher("WEB-INF/homeguest.jsp").forward(request, response);
 					} else if (privilege.equals(UserRole.EMPLOYEE)) {
 						request.getRequestDispatcher("WEB-INF/homeemployee.jsp").forward(request, response);
-					} else {
-						request.getRequestDispatcher("WEB-INF/homenowhere.jsp").forward(request, response);
 					}
 				} else {
 					usernotfound = "Invalid user. Try again!";
