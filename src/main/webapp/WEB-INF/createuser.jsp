@@ -136,6 +136,20 @@
 			cursor: pointer;
 			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 		}
+		select{
+			width: 98%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: none;
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			color: #333333;
+			font-size: 16px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+		}
+		option{
+			color: #333333;
+		}
 
 	</style>
 </head>
