@@ -14,7 +14,7 @@
     <build>
         <finalName>rcamis##0.1</finalName>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-        <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
+<!--        <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>-->
         <resources>
             <resource>
                 <directory>src/main/java</directory>
@@ -64,10 +64,10 @@
                     <compilerVersion>${java.version}</compilerVersion>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.5</version>
-            </plugin>
+<!--            <plugin>-->
+<!--                <artifactId>maven-resources-plugin</artifactId>-->
+<!--                <version>2.5</version>-->
+<!--            </plugin>-->
         </plugins>
     </build>
     <dependencies>
