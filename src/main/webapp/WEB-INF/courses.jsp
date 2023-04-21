@@ -28,7 +28,7 @@
       <c:if test="${authenticatedUser !=null}">
         <b> <a
                 href="listuser.php?page=profile&&id=${authenticatedUser.id}"><button>Profile
-        </button></a> | <img src="icons/user.png" /> <font color="#ffffff">${authenticatedUser.userRole}:
+        </button></a> | <img src="icons/cou.png" /> <font color="#ffffff">${authenticatedUser.userRole}:
             ${authenticatedUser.username}</font> | <a href="login.ap?page=logout"><font
                 color="#ffffff">Logout</font></a>
         </b>
@@ -48,16 +48,16 @@
       <div class="options">
 
         <a href="createuser.php?page=createuser"><button>
-          <img src="icons/user_add.png" /> New User Registration
+          <img src="icons/add.png" /> New Course Registration
         </button></a>
       </div>
       <div class="search">
         <form action="listuser.php" method="get">
           <table>
             <tr>
-              <td style="color: #000000;">Enter User ID</td>
+              <td style="color: #000000;">Enter Course ID</td>
               <td><input type="text" name="id" id="id" /></td>
-              <td><input type='submit' name="userregistrationsearch"
+              <td><input type='submit' name="courseSearch"
                          value='search' /></td>
             </tr>
           </table>
@@ -93,22 +93,25 @@
             <tr>
               <td>ID</td>
               <td>Name</td>
-              <td>Email</td>
-              <td>Role</td>
-              <td>Check User</td>
+              <td>Code</td>
+              <td>Min Students</td>
+              <td>Max Students</td>
+              <td>Date Start</td>
+              <td>Date End</td>
+              <td>isCancelled</td>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${users}" var="usr" varStatus="usrstatus">
-              <tr>
-                <td>${usr.id}</td>
-                <td>${usr.fullName}</td>
-                <td>${usr.email}</td>
-                <td>${usr.userRole.getRoleDescription()}</td>
-                <td><input type="checkbox" name="usrIds"
-                           value="${usr.id}" /></td>
-              </tr>
-            </c:forEach>
+<%--            <c:forEach items="${users}" var="usr" varStatus="usrstatus">--%>
+<%--              <tr>--%>
+<%--                <td>${usr.id}</td>--%>
+<%--                <td>${usr.fullName}</td>--%>
+<%--                <td>${usr.email}</td>--%>
+<%--                <td>${usr.userRole.getRoleDescription()}</td>--%>
+<%--                <td><input type="checkbox" name="usrIds"--%>
+<%--                           value="${usr.id}" /></td>--%>
+<%--              </tr>--%>
+<%--            </c:forEach>--%>
             </tbody>
           </table>
         </fieldset>
