@@ -46,7 +46,6 @@ public class Course implements Serializable{
 	@ManyToMany(cascade= CascadeType.ALL)
 	@JoinTable(name = "course_instructor", joinColumns = {@JoinColumn(name="course_id")}, inverseJoinColumns = {@JoinColumn(name="instructor_id")})
 	private Set<Instructor> instructors;
-	
 
 	public Set<Instructor> getInstructors() {
 		return instructors;

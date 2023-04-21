@@ -128,11 +128,8 @@
 	<img src="https://media.licdn.com/dms/image/C560BAQEl6a9tUkSKfg/company-logo_200_200/0/1558604414993?e=2147483647&amp;v=beta&amp;t=liCSw94UkEjwbMZZh8N23ZMYixEAMmZNq2IftvsF97Y" alt="LinkedIn Logo">
 	<h2>Sign In</h2>
 	<p>Welcome to RCA SMIS.Please enter your details.</p>
-	<c:if test="${errorMessage != null}">>
-		<fieldset>
-			<h2 style="color: red">${errorMessage}</h2>
-		</fieldset>
-
+	<c:if test="${error != null}">
+			<p style="color: red">${error}</p>
 	</c:if>
 	<form action="login.php" method="post">
 		<input type="text" placeholder="Username" required name="username">

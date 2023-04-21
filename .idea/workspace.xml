@@ -10,11 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41a2ae45-28aa-4e8b-ad5e-f3006a3bef46" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rw/ac/rca/webapp/orm/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rw/ac/rca/webapp/orm/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rw/ac/rca/webapp/web/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rw/ac/rca/webapp/web/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/createuser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/createuser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,6 +209,7 @@
       <workItem from="1681911165660" duration="4698000" />
       <workItem from="1681970608420" duration="4535000" />
       <workItem from="1682064822606" duration="1681000" />
+      <workItem from="1682079157362" duration="3516000" />
     </task>
     <servers />
   </component>

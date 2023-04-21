@@ -60,6 +60,9 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		String errorMessage = null;
 
+		System.out.println( "The username is: " + username);
+		System.out.println( "The password is: " + password);
+
 		if (username == null || username.equals("")) {
 			errorMessage = "Username can't be null or empty";
 		}
@@ -78,7 +81,7 @@ public class Login extends HttpServlet {
 
 			try {
 				User authenticatedUser = userDAO.getUserByDetails(username, username, Util.generateHashed512(password));
-
+				System.out.println(authenticatedUser);
 				if (authenticatedUser != null) {
 					System.out.println(authenticatedUser.getFullName());
 					UserRole privilege = authenticatedUser.getUserRole();
