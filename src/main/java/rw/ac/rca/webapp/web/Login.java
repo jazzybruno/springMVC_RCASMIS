@@ -58,21 +58,21 @@ public class Login extends HttpServlet {
 		HttpSession httpSession = request.getSession();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		String usernotfound = null;
+		String errorMessage = null;
 
 		if (username == null || username.equals("")) {
-			usernotfound = "Username can't be null or empty";
+			errorMessage = "Username can't be null or empty";
 		}
 		if (password == null || password.equals("")) {
-			usernotfound = "Password can't be null or empty";
+			errorMessage = "Password can't be null or empty";
 		}
 
 		if ((password == null || password.equals("")) && (username == null || username.equals(""))) {
-			usernotfound = "Usernwme & password can't be empty";
+			errorMessage = "Username & password can't be empty";
 		}
 
-		if (usernotfound != null) {
-			httpSession.setAttribute("error", usernotfound);
+		if (errorMessage != null) {
+			httpSession.setAttribute("error", errorMessage);
 			request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
 		} else {
 
@@ -80,6 +80,7 @@ public class Login extends HttpServlet {
 				User authenticatedUser = userDAO.getUserByDetails(username, username, Util.generateHashed512(password));
 
 				if (authenticatedUser != null) {
+					System.out.println(authenticatedUser.getFullName());
 					UserRole privilege = authenticatedUser.getUserRole();
 
 					LOG.info("The user [ " + privilege + " ] with privilege [ "
@@ -96,15 +97,16 @@ public class Login extends HttpServlet {
 						request.getRequestDispatcher("WEB-INF/homeemployee.jsp").forward(request, response);
 					}
 				} else {
-					usernotfound = "Invalid user. Try again!";
+					System.out.println("We have failed to fetch the user");
+					errorMessage = "Invalid user. Try again!";
 					LOG.info("Authentication failed. Username: " + username + " >>> pwd: " + password);
-					httpSession.setAttribute("error", usernotfound);
+					httpSession.setAttribute("error", errorMessage);
 					request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
 				}
 			} catch (Exception e) {
-				usernotfound = "Something wrong. Try again!";
-				LOG.info("User not found because something wrong: " + usernotfound + "The exception: " + e);
-				httpSession.setAttribute("error", usernotfound);
+				errorMessage = "Something wrong. Try again!";
+				LOG.info("User not found because something wrong: " + errorMessage + "The exception: " + e);
+				httpSession.setAttribute("error", errorMessage);
 				request.getSession().invalidate();
 				doGet(request, response);
 			}

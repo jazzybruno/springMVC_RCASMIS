@@ -88,7 +88,9 @@
 		h2{
 			text-align: center;
 			color: #333333;
-			font-family: 'Quicksand', sans-serif;		}
+			font-family: 'Quicksand', sans-serif;
+		   margin-top: 10px;
+		}
 		p,a{
 			text-align: center;
 			font-family: 'Quicksand', sans-serif;
@@ -126,9 +128,15 @@
 	<img src="https://media.licdn.com/dms/image/C560BAQEl6a9tUkSKfg/company-logo_200_200/0/1558604414993?e=2147483647&amp;v=beta&amp;t=liCSw94UkEjwbMZZh8N23ZMYixEAMmZNq2IftvsF97Y" alt="LinkedIn Logo">
 	<h2>Sign In</h2>
 	<p>Welcome to RCA SMIS.Please enter your details.</p>
+	<c:if test="${errorMessage != null}">>
+		<fieldset>
+			<h2 style="color: red">${errorMessage}</h2>
+		</fieldset>
+
+	</c:if>
 	<form action="login.php" method="post">
-		<input type="text" placeholder="Username" required>
-		<input type="password" placeholder="Password" required>
+		<input type="text" placeholder="Username" required name="username">
+		<input type="password" placeholder="Password" required name="password">
 		<input type="submit" value="Sign In">
 		<p>Create an account <span><a href="createuser.php?page=createuser"> Sign up</a>	</span></p>
 
