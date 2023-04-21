@@ -174,11 +174,10 @@
                     <c:out value="${userrole.getRoleDescription()}"/>
                 </option>
             </c:forEach>
-            </option>
         </select>
         <input type="password" placeholder="Password" required name="password">
         <input type="submit" value="Sign Up">
-        <p>Already have an account <span><a href=""> Sign in</a>	</span></p>
+        <p>Already have an account <span><a href="login.php?page=login"> Sign in</a>	</span></p>
     </form>
 
 </div>
