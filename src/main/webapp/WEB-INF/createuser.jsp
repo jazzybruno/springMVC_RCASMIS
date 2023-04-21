@@ -155,13 +155,16 @@
          alt="LinkedIn Logo">
     <h2>Sign In</h2>
     <p>Welcome to RCA SMIS.Please enter your details.</p>
-<c:if test="${message != null}">>
-				<fieldset>
-					<h3>
-						<span style="color: red"> ${message}</span>
-					</h3>
-				</fieldset>
+<c:if test="${error != null}">
+					<p>
+						<span style="color: red"> ${error}</span>
+					</p>
 			</c:if>
+    <c:if test="${success != null}">
+        <p>
+            <span style="color: green"> ${success}</span>
+        </p>
+    </c:if>
     <form  action="createuser.php?page=createuser" method="post">
         <input type="text" placeholder="Username" required name="username">
         <input type="text" placeholder="Email" required name="email">
@@ -174,11 +177,10 @@
                     <c:out value="${userrole.getRoleDescription()}"/>
                 </option>
             </c:forEach>
-            </option>
         </select>
         <input type="password" placeholder="Password" required name="password">
         <input type="submit" value="Sign Up">
-        <p>Already have an account <span><a href=""> Sign in</a>	</span></p>
+        <p>Already have an account <span><a href="login.php?page=login"> Sign in</a>	</span></p>
     </form>
 
 </div>
