@@ -47,11 +47,11 @@
     <c:if test="${authenticatedUser !=null}">
       <div class="options">
 
-        <a href="createcourse.php?page=createcourse&&action=create"><button>
+        <a href="createcourse.php?page=createcourse"><button>
           <img src="icons/add.png" /> New Course Registration
         </button></a>
       </div>
-      <div class="search">
+      <div class="search">y
         <form action="listuser.php" method="get">
           <table>
             <tr>
@@ -65,7 +65,6 @@
       </div>
       <hr />
           <table style="border: 0;">
-            <ta>
               <td align="left"><input type="text" size="15"
                                       maxlength="50" readonly="readonly" name="savedBy" id="savedBy"
                                       hidden="hidden" value="${authenticatedUser.id}" /></td>

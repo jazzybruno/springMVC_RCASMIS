@@ -32,16 +32,16 @@ public class CreateCourse extends HttpServlet {
         System.out.println("The user in session is: " + user);
 
         if (pageRedirect != null) {
-            String action = request.getParameter("action");
-            if (pageRedirect == "createcourse" && action == "create") {
+            System.out.println("The print statement is and the only is: " + pageRedirect);
+            if (pageRedirect.equals("createcourse")) {
                 request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request, response);
             } else {
                 request.setAttribute("error ", "No user found");
-                request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
             }
         } else {
             request.setAttribute("error ", "No user found");
-            request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
         }
     }
 

@@ -56,8 +56,7 @@
       font-family: 'Quicksand', sans-serif;
       text-decoration: none;
     }
-
-    input[type="text"], input[type="password"] {
+    input[type="text"], input[type="password"] , input[type="date"] , input[type="number"] {
       width: 93%;
       padding: 10px;
       margin-bottom: 20px;

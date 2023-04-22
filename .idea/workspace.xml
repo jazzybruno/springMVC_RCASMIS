@@ -12,6 +12,9 @@
     <list default="true" id="41a2ae45-28aa-4e8b-ad5e-f3006a3bef46" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rw/ac/rca/webapp/web/CreateCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rw/ac/rca/webapp/web/CreateCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/courses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/courses.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/createCourse.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/createCourse.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +79,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HP\IdeaProjects\rcasmis\src\main" />
       <recent name="C:\Users\HP\IdeaProjects\rcasmis\src\main\webapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\IdeaProjects\rcasmis\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunManager">
@@ -212,7 +218,8 @@
       <workItem from="1682079157362" duration="4483000" />
       <workItem from="1682089076925" duration="2727000" />
       <workItem from="1682105188915" duration="2523000" />
-      <workItem from="1682143268287" duration="3846000" />
+      <workItem from="1682143268287" duration="6730000" />
+      <workItem from="1682155378231" duration="835000" />
     </task>
     <servers />
   </component>
