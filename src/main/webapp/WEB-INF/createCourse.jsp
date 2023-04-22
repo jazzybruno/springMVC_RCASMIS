@@ -114,10 +114,9 @@
       <span style="color: green"> ${success}</span>
     </p>
   </c:if>
-  <form  action="createuser.php?page=createuser" method="post">
+  <form  action="createcourse.php?page=createcourse" method="post">
     <input type="text" placeholder="Course Name" required name="name">
     <input type="text" placeholder="Course Code" required name="code">
-    <input type="text" placeholder="Fullname" required name="userfullname">
     <input type="number" placeholder="Min Students" required name="min">
     <input type="number" placeholder="Max Students" required name="max">
     <input type="date" placeholder="Start Date" required name="start">

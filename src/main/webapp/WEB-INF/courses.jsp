@@ -51,7 +51,7 @@
           <img src="icons/add.png" /> New Course Registration
         </button></a>
       </div>
-      <div class="search">y
+      <div class="search">
         <form action="listuser.php" method="get">
           <table>
             <tr>

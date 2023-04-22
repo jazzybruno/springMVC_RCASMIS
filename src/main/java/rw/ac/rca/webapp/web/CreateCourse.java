@@ -1,6 +1,13 @@
 package rw.ac.rca.webapp.web;
 
+import rw.ac.rca.webapp.dao.CourseDAO;
+import rw.ac.rca.webapp.dao.UserDAO;
+import rw.ac.rca.webapp.dao.impl.CourseDAOImpl;
+import rw.ac.rca.webapp.orm.Course;
+import rw.ac.rca.webapp.orm.User;
+
 import java.io.IOException;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +19,7 @@ import javax.servlet.http.HttpSession;
  */
 public class CreateCourse extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private  CourseDAO courseDAO = CourseDAOImpl.getInstance();
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -49,7 +57,36 @@ public class CreateCourse extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        doGet(request, response);
+        String pageRedirect = request.getParameter("page");
+        HttpSession httpSession = request.getSession();
+        Object user = httpSession.getAttribute("authenticatedUser");
+
+        if(pageRedirect != null){
+            if(pageRedirect.equals("createcourse")){
+                Course course = new Course(
+                        request.getParameter("name").toString(),
+                        request.getParameter("code").toString(),
+                         Integer.parseInt(request.getParameter("min").toString()),
+                         Integer.parseInt(request.getParameter("max").toString()),
+                         request.getParameter("sart"),
+                         request.getParameter("end"),
+                        false
+                );
+
+                // Saving the course;
+                 try {
+                    courseDAO.saveCourse(course);
+                     request.setAttribute("success" , "Successfully created the Course" );
+                     request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request , response);
+                 }catch (Exception e){
+                     request.setAttribute("error" , "Failed to create the Course" );
+                     request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request , response);
+                 }
+            }else{
+                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+            }
+        }else{
+            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+        }
     }
 }
