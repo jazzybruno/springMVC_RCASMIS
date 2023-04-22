@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/displaytag.css" type="text/css" />
   <link rel="stylesheet" href="css/screen.css" type="text/css" />
   <link rel="stylesheet" href="css/site.css" type="text/css" />
-  <title>User Registrations</title>
+  <title>Course Registrations</title>
 </head>
 <body>
 <div id="layout">
