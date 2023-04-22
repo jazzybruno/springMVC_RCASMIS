@@ -33,56 +33,8 @@ public class CreateUser extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String pageRedirect = request.getParameter("page");
-//		HttpSession httpSession = request.getSession();
-//		if (pageRedirect != null) {
-//			if (pageRedirect.equals("createuser")) {
-//				if (request.getParameter("saveDataUser") != null) {
-//					User user = new User();
-//					String usernameauth = request.getParameter("username");
-//					String passwordauth = request.getParameter("password");
-//					String userfullname = request.getParameter("userfullname");
-//					String email = request.getParameter("email");
-//					String userRole = request.getParameter("userRole");
-//					UserRole usrr = UserRole.valueOf(userRole);
-//
-//					System.out.println(usernameauth);
-//					System.out.println(userfullname);
-//					System.out.println(email);
-//					System.out.println(userRole);
-//					System.out.println(passwordauth);
-//					try {
-//						String hashedPsw = Util.generateHashed512(passwordauth);
-//
-//						user.setUsername(usernameauth);
-//						user.setPassword(hashedPsw);
-//						user.setFullName(userfullname);
-//						user.setEmail(email);
-//						user.setUserRole(usrr);
-//
-//						userDAO.saveOrUpdateUser(user);
-//
-//						httpSession.setAttribute("message", "Created successfully");
-//					} catch (Exception e) {
-//						httpSession.setAttribute("message", "Can't Create");
-//					}
-//
-//				}
-//
-//			}
-//			UserRole[] userRoles = UserRole.values();
-//			httpSession.setAttribute("userRoles", userRoles);
-//			request.getRequestDispatcher("WEB-INF/createuser.jsp").forward(
-//					request, response);
-//		}
 		String pageRedirect = request.getParameter("page");
 		HttpSession httpSession = request.getSession();
-//		if (pageRedirect != null) {
-//			if (pageRedirect.equals("createuser")) {
-//				if (request.getParameter("saveDataUser") != null) {
-//					request.getRequestDispatcher("WEB-INF/createuser.jsp").forward(
-//							request, response);
-//				}}}
 		UserRole[] userRoles = UserRole.values();
 		httpSession.setAttribute("userRoles", userRoles);
 		request.getRequestDispatcher("WEB-INF/createuser.jsp").forward(

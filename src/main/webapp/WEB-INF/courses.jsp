@@ -64,29 +64,12 @@
         </form>
       </div>
       <hr />
-      <form action="listuser.php?page=statusapproval" method="post">
-        <fieldset>
-          <legend> User Registration Approval Status </legend>
-
           <table style="border: 0;">
-            <tr>
+            <ta>
               <td align="left"><input type="text" size="15"
                                       maxlength="50" readonly="readonly" name="savedBy" id="savedBy"
                                       hidden="hidden" value="${authenticatedUser.id}" /></td>
 
-              <td><select name="userRole" id="userRole">
-                <option selected="selected" value="NONE">Select Role</option>
-                <c:forEach items="${userRoles}" var="usrRole"
-                           varStatus="usrRolestatus">
-                  <option value="${usrRole}">
-                    <c:out value="${usrRole.getRoleDescription()}" />
-                  </option>
-                </c:forEach>
-              </select></td>
-              <td align="right"><input type="submit"
-                                       name="saveDataUserStatus" value="Save Status" /></td>
-            </tr>
-          </table>
 
           <table>
             <thead>
@@ -114,8 +97,7 @@
 <%--            </c:forEach>--%>
             </tbody>
           </table>
-        </fieldset>
-      </form>
+          </table>
     </c:if>
   </div>
 <%@ include file="footer.jsp"%>
