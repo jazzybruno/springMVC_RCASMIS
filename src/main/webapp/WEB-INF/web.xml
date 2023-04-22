@@ -15,7 +15,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>CreateCourse</servlet-name>
-    <url-pattern>/1.php</url-pattern>
+    <url-pattern>/createcourse.php</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -27,7 +27,7 @@
     <servlet-name>ListCourse</servlet-name>
     <url-pattern>/listcourses.php</url-pattern>
   </servlet-mapping>
-  <servlet><x></x>
+  <servlet>
     <description></description>
     <display-name>CreateUser</display-name>
     <servlet-name>CreateUser</servlet-name>

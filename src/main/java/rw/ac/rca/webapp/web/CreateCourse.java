@@ -5,13 +5,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class CreateCourse
  */
 public class CreateCourse extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -20,19 +21,35 @@ public class CreateCourse extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        String pageRedirect = request.getParameter("page");
+        HttpSession httpSession = request.getSession();
+        Object user = httpSession.getAttribute("authenticatedUser");
+        System.out.println("The user in session is: " + user);
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+        if (pageRedirect != null) {
+            String action = request.getParameter("action");
+            if (pageRedirect == "createcourse" && action == "create") {
+                request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request, response);
+            } else {
+                request.setAttribute("error ", "No user found");
+                request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request, response);
+            }
+        } else {
+            request.setAttribute("error ", "No user found");
+            request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request, response);
+        }
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        doGet(request, response);
+    }
 }

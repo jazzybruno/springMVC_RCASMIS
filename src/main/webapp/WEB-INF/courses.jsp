@@ -47,7 +47,7 @@
     <c:if test="${authenticatedUser !=null}">
       <div class="options">
 
-        <a href="createuser.php?page=createuser"><button>
+        <a href="createcourse.php?page=createcourse&&action=create"><button>
           <img src="icons/add.png" /> New Course Registration
         </button></a>
       </div>
