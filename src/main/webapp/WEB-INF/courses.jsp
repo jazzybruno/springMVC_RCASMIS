@@ -18,6 +18,26 @@
   <link rel="stylesheet" href="css/screen.css" type="text/css" />
   <link rel="stylesheet" href="css/site.css" type="text/css" />
   <title>Course Registrations</title>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #ddddd  d;
+      text-align: left;
+      padding: 8px;
+    }
+
+    thead{
+      background-color: #008dd4;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 <div id="layout">
@@ -80,20 +100,24 @@
               <td>Max Students</td>
               <td>Date Start</td>
               <td>Date End</td>
-              <td>isCancelled</td>
+<%--              <td>isCancelled</td>--%>
             </tr>
             </thead>
             <tbody>
-<%--            <c:forEach items="${users}" var="usr" varStatus="usrstatus">--%>
-<%--              <tr>--%>
-<%--                <td>${usr.id}</td>--%>
-<%--                <td>${usr.fullName}</td>--%>
-<%--                <td>${usr.email}</td>--%>
-<%--                <td>${usr.userRole.getRoleDescription()}</td>--%>
-<%--                <td><input type="checkbox" name="usrIds"--%>
-<%--                           value="${usr.id}" /></td>--%>
-<%--              </tr>--%>
-<%--            </c:forEach>--%>
+            <c:forEach items="${courses}" var="csr" varStatus="usrstatus">
+              <tr>
+                <td>${csr.id}</td>
+                <td>${csr.name}</td>
+                <td>${csr.code}</td>
+                <td>${csr.minStudent}</td>
+                <td>${csr.maxStudent}</td>
+                <td>${csr.start}</td>
+                <td>${csr.end}</td>
+<%--                <td>${csr.isCancelled}</td>--%>
+                <td><input type="checkbox" name="usrIds"
+                           value="${usr.id}" /></td>
+              </tr>
+            </c:forEach>
             </tbody>
           </table>
           </table>

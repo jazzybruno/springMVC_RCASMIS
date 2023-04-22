@@ -124,6 +124,11 @@
     <input type="submit" value="Create Course">
   </form>
 
+  <p>
+    <a href="listcourses.php?page=courses&&action=list">
+      All Courses
+    </a>
+  </p>
 </div>
 </body>
 </html>

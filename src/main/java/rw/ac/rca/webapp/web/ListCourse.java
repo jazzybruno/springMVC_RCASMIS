@@ -1,5 +1,8 @@
 package rw.ac.rca.webapp.web;
 
+import rw.ac.rca.webapp.dao.CourseDAO;
+import rw.ac.rca.webapp.dao.impl.CourseDAOImpl;
+import rw.ac.rca.webapp.orm.Course;
 import rw.ac.rca.webapp.orm.User;
 import rw.ac.rca.webapp.util.UserRole;
 
@@ -17,6 +20,7 @@ import javax.servlet.http.HttpSession;
  */
 public class ListCourse extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private CourseDAO courseDAO = CourseDAOImpl.getInstance();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -40,8 +44,8 @@ public class ListCourse extends HttpServlet {
 		if (pageRedirect != null) {
 			if (pageRedirect.equals("courses") && request.getParameter("action").equals("list")) {
 
-//				List<User> users = userDAO.getAllUsers();
-//				httpSession.setAttribute("users", users);
+				List<Course> courses = courseDAO.getAllCourses();
+				httpSession.setAttribute("courses", courses);
 				UserRole[] userRoles = UserRole.values();
 				httpSession.setAttribute("userRoles", userRoles);
 				request.getRequestDispatcher("WEB-INF/courses.jsp").forward(request , response);

@@ -7,6 +7,8 @@ import rw.ac.rca.webapp.orm.Course;
 import rw.ac.rca.webapp.orm.User;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -62,16 +64,22 @@ public class CreateCourse extends HttpServlet {
         Object user = httpSession.getAttribute("authenticatedUser");
 
         if(pageRedirect != null){
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             if(pageRedirect.equals("createcourse")){
-                Course course = new Course(
-                        request.getParameter("name").toString(),
-                        request.getParameter("code").toString(),
-                         Integer.parseInt(request.getParameter("min").toString()),
-                         Integer.parseInt(request.getParameter("max").toString()),
-                         request.getParameter("sart"),
-                         request.getParameter("end"),
-                        false
-                );
+                Course course = null;
+                try {
+                    course = new Course(
+                            request.getParameter("name"),
+                            request.getParameter("code"),
+                             Integer.parseInt(request.getParameter("min")),
+                             Integer.parseInt(request.getParameter("max")),
+                             simpleDateFormat.parse(request.getParameter("start")),
+                             simpleDateFormat.parse(request.getParameter("end")),
+                            false
+                    );
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
 
                 // Saving the course;
                  try {
